@@ -6,6 +6,20 @@
   margin: 20px 0;
 }
 
+.taskDescription h1 {
+  font-size: 22px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.taskDescription p {
+  font-size: 18px;
+}
+
+.taskDescription span {
+  font-weight: 600;
+}
+
 .taskBtnContainer {
   display: flex;
   justify-content: flex-end;

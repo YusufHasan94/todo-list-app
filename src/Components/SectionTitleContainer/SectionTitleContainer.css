@@ -1,6 +1,12 @@
 .titleArea {
   background-color: #6215a9;
   color: white;
-  padding: 5px 0;
+  padding: 5px 20px;
   border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.titleArea h1 {
+  font-size: 24px;
+  font-weight: 500;
 }

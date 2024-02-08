@@ -1,0 +1,29 @@
+.navContainer {
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logoContainer {
+  font-size: 20px;
+}
+
+.navItemsContainer {
+  display: flex;
+  gap: 20px;
+}
+
+.searchBtn,
+.notificationBtn,
+.addTaskBtn {
+  font-size: 20px;
+  background-color: transparent;
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+.addTaskBtn {
+  background: darkviolet;
+  color: white;
+}
