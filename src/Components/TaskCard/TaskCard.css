@@ -1,0 +1,24 @@
+.taskContainer {
+  background-color: #dedee0;
+  border-radius: 10px;
+  padding: 5px 20px 20px 20px;
+  text-align: left;
+  margin: 20px 0;
+}
+
+.taskBtnContainer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.taskBtnContainer button {
+  font-size: 20px;
+  padding: 5px 10px;
+  border: 1px solid #bababa;
+  border-radius: 10px;
+  background-color: transparent;
+}
+.dltBtn {
+  color: #e62929 !important;
+}

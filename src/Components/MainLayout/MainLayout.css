@@ -1,0 +1,10 @@
+.mainLayoutContainer {
+  padding: 10px 0;
+}
+.allTaskContainer {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 33.3%);
+  justify-content: center;
+  gap: 20px;
+}
