@@ -1,0 +1,67 @@
+.modalContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.assignTaskModal {
+  background-color: rgb(222, 222, 224);
+  width: 30%;
+  padding: 20px 50px;
+  border-radius: 10px;
+}
+
+.modalCloseBtn {
+  font-size: 32px;
+  background-color: transparent;
+  border: none;
+  display: flex;
+}
+
+.titleContainer,
+.descriptionContainer,
+.deadlineContainer,
+.priorityContainer {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+}
+
+.assignTaskModal div label {
+  font: 22px;
+  font-weight: 600;
+}
+
+.assignTaskModal div input,
+textarea,
+select {
+  padding: 10px;
+  border-radius: 5px;
+  border-color: transparent;
+  font-size: 18px;
+}
+
+.formBtnContainer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.formBtnContainer button {
+  color: white;
+  font-size: 20px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 10px;
+}
+
+.submitBtn {
+  background-color: blueviolet;
+}
+
+.cancelBtn {
+  background-color: #dc5151;
+}

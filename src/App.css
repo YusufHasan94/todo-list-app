@@ -8,15 +8,35 @@
 }
 
 .navContainer {
-  background-color: blueviolet;
-  color: white;
-  padding: 20px 0;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
 }
-.navContainer > h1 {
-  margin: 0;
+
+.logoContainer {
+  font-size: 20px;
+}
+
+.navItemsContainer {
+  display: flex;
+  gap: 20px;
+}
+
+.searchBtn,
+.notificationBtn,
+.addTaskBtn {
+  font-size: 20px;
+  background-color: transparent;
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+.addTaskBtn {
+  background: darkviolet;
+  color: white;
 }
 
 .mainLayoutContainer {
-  background-color: bisque;
   padding: 10px 0;
 }
