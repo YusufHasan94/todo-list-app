@@ -3,7 +3,7 @@ import "./UpNext.css";
 import SectionTitleContainer from "../SectionTitleContainer/SectionTitleContainer";
 import TaskCard from "../TaskCard/TaskCard";
 
-const UpNext = ({ tasks, updateTaskStatus }) => {
+const UpNext = ({ tasks, updateTaskStatus, deleteTask }) => {
   return (
     <div>
       <SectionTitleContainer title="Up Next" count={tasks?.length} />
@@ -13,6 +13,7 @@ const UpNext = ({ tasks, updateTaskStatus }) => {
             key={index}
             item={item}
             updateTaskStatus={updateTaskStatus}
+            deleteTask={deleteTask}
           />
         ))}
       </div>

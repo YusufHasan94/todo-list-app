@@ -40,12 +40,30 @@ const MainLayout = () => {
     localStorage.setItem("formData", JSON.stringify(updatedTask));
   };
 
+  const deleteTask = (id) => {
+    const remainingTask = tasks.filter((task) => task.id !== id);
+    setTasks(remainingTask);
+    localStorage.setItem("formData", JSON.stringify(remainingTask));
+  };
+
   return (
     <div className="mainLayoutContainer">
       <div className="allTaskContainer">
-        <UpNext tasks={pendingTasks} updateTaskStatus={updateTaskStatus} />
-        <InProgress tasks={ongoingTasks} updateTaskStatus={updateTaskStatus} />
-        <Complete tasks={completedTasks} updateTaskStatus={updateTaskStatus} />
+        <UpNext
+          tasks={pendingTasks}
+          updateTaskStatus={updateTaskStatus}
+          deleteTask={deleteTask}
+        />
+        <InProgress
+          tasks={ongoingTasks}
+          updateTaskStatus={updateTaskStatus}
+          deleteTask={deleteTask}
+        />
+        <Complete
+          tasks={completedTasks}
+          updateTaskStatus={updateTaskStatus}
+          deleteTask={deleteTask}
+        />
       </div>
     </div>
   );

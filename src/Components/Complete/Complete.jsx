@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import SectionTitleContainer from "../SectionTitleContainer/SectionTitleContainer";
 import TaskCard from "../TaskCard/TaskCard";
 
-const Complete = ({ tasks, updateTaskStatus }) => {
+const Complete = ({ tasks, updateTaskStatus, deleteTask }) => {
   return (
     <div>
       <SectionTitleContainer title="completed" count={tasks?.length} />
@@ -12,6 +12,7 @@ const Complete = ({ tasks, updateTaskStatus }) => {
             key={index}
             item={item}
             updateTaskStatus={updateTaskStatus}
+            deleteTask={deleteTask}
           />
         ))}
       </div>
