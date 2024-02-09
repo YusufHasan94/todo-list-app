@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import SectionTitleContainer from "../SectionTitleContainer/SectionTitleContainer";
 import TaskCard from "../TaskCard/TaskCard";
 
-const Complete = () => {
+const Complete = ({ tasks, updateTaskStatus }) => {
   return (
     <div>
-      <SectionTitleContainer title="Complete" />
+      <SectionTitleContainer title="completed" count={tasks?.length} />
       <div>
-        <TaskCard />
-        <TaskCard />
+        {tasks?.map((item, index) => (
+          <TaskCard
+            key={index}
+            item={item}
+            updateTaskStatus={updateTaskStatus}
+          />
+        ))}
       </div>
     </div>
   );

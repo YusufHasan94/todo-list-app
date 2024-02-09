@@ -1,8 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./AddTaskModal.css";
-import { IoMdCloseCircleOutline } from "react-icons/io";
 
 const AddTaskModal = ({ closeModal }) => {
+  const [tasks, setTasks] = useState([]);
+
+  useEffect(() => {
+    const storedTasks = JSON.parse(localStorage.getItem("formData"));
+    if (storedTasks) {
+      setTasks(storedTasks);
+    }
+  }, []);
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -10,21 +18,22 @@ const AddTaskModal = ({ closeModal }) => {
     const description = form.description.value;
     const deadline = form.deadline.value;
     const priority = form.priority.value;
-    let status = "pending";
-    const values = {
+    const newTask = {
+      id: Date.now(),
       title,
       description,
       deadline,
       priority,
-      status,
+      status: "pending",
     };
-    console.log(values);
-    let existingTasks = JSON.parse(localStorage.getItem("formData")) || [];
-    if (!Array.isArray(existingTasks)) {
-      existingTasks = [];
-    }
-    existingTasks.push(values);
-    localStorage.setItem("formData", JSON.stringify(existingTasks));
+    console.log(newTask);
+
+    const newTasks = [...tasks, newTask];
+    console.log(newTasks);
+
+    setTasks(newTasks);
+    localStorage.setItem("formData", JSON.stringify(newTasks));
+
     form.reset();
   };
   return (
