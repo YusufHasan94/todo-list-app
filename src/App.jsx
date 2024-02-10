@@ -5,6 +5,7 @@ import MainLayout from "./Components/MainLayout/MainLayout";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
+  const [sortBy, setSortBy] = useState("");
 
   const closeModal = () => {
     setIsOpen(false);
@@ -14,11 +15,17 @@ function App() {
   };
   return (
     <>
-      <Navbar isOpen={isOpen} closeModal={closeModal} openModal={openModal} />
+      <Navbar
+        isOpen={isOpen}
+        closeModal={closeModal}
+        openModal={openModal}
+        setSortBy={setSortBy}
+      />
       <MainLayout
         isOpen={isOpen}
         closeModal={closeModal}
         openModal={openModal}
+        sortBy={sortBy}
       />
     </>
   );

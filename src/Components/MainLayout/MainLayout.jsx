@@ -4,7 +4,7 @@ import Complete from "../Complete/Complete";
 import "./MainLayout.css";
 import { useEffect, useState } from "react";
 import AddTaskModal from "../AddTaskModal/AddTaskModal";
-const MainLayout = ({ isOpen, openModal, closeModal }) => {
+const MainLayout = ({ isOpen, openModal, closeModal, sortBy }) => {
   const [tasks, setTasks] = useState([]);
   const [pendingTasks, setPendingTasks] = useState([]);
   const [ongoingTasks, setOngoingTasks] = useState([]);
@@ -18,6 +18,12 @@ const MainLayout = ({ isOpen, openModal, closeModal }) => {
       UpdatedTaskList(storedTask);
     }
   }, []);
+
+  useEffect(() => {
+    if (sortBy) {
+      sortTasksByOrder(sortBy);
+    }
+  }, [sortBy]);
 
   const UpdatedTaskList = (storedTask) => {
     const filterPendingTasks = storedTask?.filter(
@@ -66,6 +72,30 @@ const MainLayout = ({ isOpen, openModal, closeModal }) => {
     localStorage.setItem("formData", JSON.stringify(updatedTasks));
     setSelectedTask(null);
     closeModal();
+  };
+
+  const sortTasksByOrder = (order) => {
+    console.log(order);
+    let sortedTasks = [...tasks];
+    if (order === "high") {
+      sortedTasks.sort((a, b) => {
+        const priorityOrder = { high: 3, medium: 2, low: 1 };
+        return priorityOrder[b.priority] - priorityOrder[a.priority];
+      });
+    } else if (order === "medium") {
+      sortedTasks.sort((a, b) => {
+        const priorityOrder = { medium: 3, low: 2, high: 1 };
+        return priorityOrder[b.priority] - priorityOrder[a.priority];
+      });
+    } else if (order === "low") {
+      sortedTasks.sort((a, b) => {
+        const priorityOrder = { low: 3, medium: 2, high: 1 };
+        return priorityOrder[b.priority] - priorityOrder[a.priority];
+      });
+    } else {
+      return;
+    }
+    UpdatedTaskList(sortedTasks);
   };
 
   return (
