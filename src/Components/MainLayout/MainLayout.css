@@ -8,3 +8,25 @@
   justify-content: center;
   gap: 20px;
 }
+
+@media screen and (max-width: 1200px) {
+  .allTaskContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .mainLayoutContainer {
+    padding: 0 150px;
+  }
+  .allTaskContainer {
+    display: grid;
+    grid-template-columns: repeat(1, 90%);
+  }
+}
+@media screen and (max-width: 750px) {
+  .mainLayoutContainer {
+    padding: 0 10px;
+  }
+}

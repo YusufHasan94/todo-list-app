@@ -68,3 +68,9 @@ select {
 .cancelBtn {
   background-color: #e62929;
 }
+
+@media screen and (max-width: 1000px) {
+  .assignTaskModal {
+    width: 50%;
+  }
+}

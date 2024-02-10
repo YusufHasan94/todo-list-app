@@ -6,3 +6,15 @@
   margin: 0 auto;
   text-align: center;
 }
+
+@media screen and (max-width: 1440px) {
+  #root {
+    padding: 0 50px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  #root {
+    padding: 0 10px;
+  }
+}
