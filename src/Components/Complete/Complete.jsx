@@ -2,7 +2,13 @@ import React, { useState } from "react";
 import SectionTitleContainer from "../SectionTitleContainer/SectionTitleContainer";
 import TaskCard from "../TaskCard/TaskCard";
 
-const Complete = ({ tasks, updateTaskStatus, deleteTask }) => {
+const Complete = ({
+  tasks,
+  updateTaskStatus,
+  deleteTask,
+  openModal,
+  setSelectedTask,
+}) => {
   return (
     <div>
       <SectionTitleContainer title="completed" count={tasks?.length} />
@@ -13,6 +19,8 @@ const Complete = ({ tasks, updateTaskStatus, deleteTask }) => {
             item={item}
             updateTaskStatus={updateTaskStatus}
             deleteTask={deleteTask}
+            openModal={openModal}
+            setSelectedTask={setSelectedTask}
           />
         ))}
       </div>

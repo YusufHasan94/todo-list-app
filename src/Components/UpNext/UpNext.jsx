@@ -3,7 +3,13 @@ import "./UpNext.css";
 import SectionTitleContainer from "../SectionTitleContainer/SectionTitleContainer";
 import TaskCard from "../TaskCard/TaskCard";
 
-const UpNext = ({ tasks, updateTaskStatus, deleteTask }) => {
+const UpNext = ({
+  tasks,
+  updateTaskStatus,
+  deleteTask,
+  openModal,
+  setSelectedTask,
+}) => {
   return (
     <div>
       <SectionTitleContainer title="Up Next" count={tasks?.length} />
@@ -14,6 +20,8 @@ const UpNext = ({ tasks, updateTaskStatus, deleteTask }) => {
             item={item}
             updateTaskStatus={updateTaskStatus}
             deleteTask={deleteTask}
+            openModal={openModal}
+            setSelectedTask={setSelectedTask}
           />
         ))}
       </div>

@@ -3,7 +3,13 @@ import { CiEdit, CiTrash } from "react-icons/ci";
 import { GrLinkNext } from "react-icons/gr";
 import "./TaskCard.css";
 
-const TaskCard = ({ item, updateTaskStatus, deleteTask }) => {
+const TaskCard = ({
+  item,
+  updateTaskStatus,
+  deleteTask,
+  openModal,
+  setSelectedTask,
+}) => {
   const handleNext = () => {
     if (item.status == "pending") {
       updateTaskStatus(item.id, "progress");
@@ -14,6 +20,11 @@ const TaskCard = ({ item, updateTaskStatus, deleteTask }) => {
 
   const handleDelete = () => {
     deleteTask(item.id);
+  };
+
+  const handleEditTask = () => {
+    setSelectedTask(item);
+    openModal();
   };
 
   return (
@@ -30,7 +41,7 @@ const TaskCard = ({ item, updateTaskStatus, deleteTask }) => {
         </p>
       </div>
       <div className="taskBtnContainer">
-        <button>
+        <button onClick={handleEditTask}>
           <CiEdit />
         </button>
         <button className="dltBtn" onClick={handleDelete}>

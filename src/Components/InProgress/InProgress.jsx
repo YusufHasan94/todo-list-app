@@ -2,7 +2,13 @@ import React, { useEffect, useState } from "react";
 import SectionTitleContainer from "../SectionTitleContainer/SectionTitleContainer";
 import TaskCard from "../TaskCard/TaskCard";
 
-const InProgress = ({ tasks, updateTaskStatus, deleteTask }) => {
+const InProgress = ({
+  tasks,
+  updateTaskStatus,
+  deleteTask,
+  openModal,
+  setSelectedTask,
+}) => {
   return (
     <div>
       <SectionTitleContainer title="In Progress" count={tasks?.length} />
@@ -14,6 +20,8 @@ const InProgress = ({ tasks, updateTaskStatus, deleteTask }) => {
               item={item}
               updateTaskStatus={updateTaskStatus}
               deleteTask={deleteTask}
+              openModal={openModal}
+              setSelectedTask={setSelectedTask}
             />
           ))}
         </div>

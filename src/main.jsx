@@ -4,18 +4,11 @@ import App from "./App.jsx";
 import "./index.css";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import MainLayout from "./Components/MainLayout/MainLayout.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    children: [
-      {
-        path: "/",
-        element: <MainLayout />,
-      },
-    ],
   },
 ]);
 
